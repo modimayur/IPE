@@ -1,0 +1,204 @@
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('../fonts/CenturyGothic-Bold.eot');
+    src: url('../fonts/CenturyGothic-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CenturyGothic-Bold.woff2') format('woff2'),
+        url('../fonts/CenturyGothic-Bold.woff') format('woff'),
+        url('../fonts/CenturyGothic-Bold.ttf') format('truetype'),
+        url('../fonts/CenturyGothic-Bold.svg#CenturyGothic-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('../fonts/CenturyGothic-Bold.eot');
+    src: url('../fonts/CenturyGothic-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CenturyGothic-Bold.woff2') format('woff2'),
+        url('../fonts/CenturyGothic-Bold.woff') format('woff'),
+        url('../fonts/CenturyGothic-Bold.ttf') format('truetype'),
+        url('../fonts/CenturyGothic-Bold.svg#CenturyGothic-Bold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Century Gothic';
+    src: url('../fonts/CenturyGothic.eot');
+    src: url('../fonts/CenturyGothic.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/CenturyGothic.woff2') format('woff2'),
+        url('../fonts/CenturyGothic.woff') format('woff'),
+        url('../fonts/CenturyGothic.ttf') format('truetype'),
+        url('../fonts/CenturyGothic.svg#CenturyGothic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Century Gothic';
+    margin: 0;
+    padding: 0;
+}
+
+header.mainHeader {
+    nav.navbar {
+        transition: all 0.5s linear;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+        z-index: 2;
+
+        a.navbar-brand {
+            padding: 10px 0;
+        }
+
+        span.logo {
+            display: block;
+            position: relative;
+            overflow: hidden;
+
+            .logo-light {
+                opacity: 1;
+                transform: translateY(0%);
+                transition: all 0.5s linear;
+            }
+
+            .logo-dark {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                transform: translateY(100%);
+                transition: all 0.5s linear;
+            }
+        }
+
+        ul.navbar-nav {
+            .nav-item {
+                >.nav-link {
+                    transition: color 0.5s linear;
+                    color: #fff;
+                    font-size: 13px;
+                    font-weight: 500;
+                    padding: 34px 12px;
+
+                    &:hover {
+                        color: rgba(255, 255, 255, 0.5)
+                    }
+                }
+
+                &.active>a {
+                    color: #fffc00;
+
+                    &:hover {
+                        color: rgba(255, 252, 0, 0.7);
+                    }
+                }
+
+                &.dropdown {
+                    @media(min-width: 992px) {
+                        .dropdown-toggle:after {
+                            display: none;
+                        }
+
+                        >.dropdown-menu {
+                            display: block;
+                            opacity: 0;
+                            visibility: hidden;
+                            transition: all 0.3s linear;
+                        }
+
+                        &:hover {
+                            >.dropdown-menu {
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        &.sticky {
+            background-color: #fff !important;
+
+            span.logo {
+                .logo-light {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+
+                .logo-dark {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            ul.navbar-nav {
+                .nav-item {
+                    >.nav-link {
+                        color: rgba(0, 0, 0, 0.6);
+
+                        &:hover {
+                            color: rgba(0, 0, 0, 1);
+
+                        }
+                    }
+
+                    &.active>a {
+                        color: rgba(0, 0, 0, 1);
+
+                        &:hover {
+                            color: rgba(0, 0, 0, 0.8);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .banner {
+        background-image: url("../images/mainbanner.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 100%;
+        height: auto;
+        position: relative;
+        z-index: -10;
+        padding: 40% 0 0;
+
+        .banner-content {
+            position: absolute;
+            bottom: auto;
+            left: auto;
+            right: 0;
+            top: 50%;
+            z-index: 3;
+            text-align: center;
+            transform: translateY(-50%);
+
+            h3 {
+                text-align: center;
+                background-color: rgba(255, 255, 255, 0.5);
+                color: #000;
+                display: inline-block;
+                padding: 10px 15px;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+}
+
+section.scroll {
+    background-color: #fff;
+    padding:38px 0;
+}
