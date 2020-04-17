@@ -145,6 +145,18 @@ $(function () {
             });
         }
     }
+    var owl = $('.mainslider');
+    owl.owlCarousel({
+        nav: false,
+        dots: true,
+        loop: true,
+        margin: 1,
+        items:1,
+        navText: ['', ''],
+        autoplay:true,
+        autoplayTimeout:5000,
+        autoplayHoverPause: false
+    });
 
 
 });

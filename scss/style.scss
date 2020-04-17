@@ -86,10 +86,10 @@ body {
             left: 0;
             right: 0;
             padding: 0;
-            z-index: 2;
+            z-index: 3;
 
             a.navbar-brand {
-                padding: 10px 0;
+                padding: 0px 0;
             }
 
             span.logo {
@@ -121,7 +121,7 @@ body {
                         font-size: 13px;
                         font-weight: 500;
                         padding: 34px 12px;
-
+                        transition: all 0.3s linear;
                         &:hover {
                             color: rgba(255, 255, 255, 0.5)
                         }
@@ -179,6 +179,7 @@ body {
                     .nav-item {
                         >.nav-link {
                             color: rgba(0, 0, 0, 0.6);
+                            padding: 22px 12px;
 
                             &:hover {
                                 color: rgba(0, 0, 0, 1);
@@ -188,7 +189,6 @@ body {
 
                         &.active>a {
                             color: rgba(0, 0, 0, 1);
-
                             &:hover {
                                 color: rgba(0, 0, 0, 0.8);
                             }
@@ -197,34 +197,61 @@ body {
                 }
             }
         }
-
-        .banner {
-            background-image: url("../images/mainbanner.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: 100%;
-            height: auto;
+        .mainslider.owl-carousel {
             position: relative;
-            z-index: -1;
-            padding: 40% 0 0;
-
-            .banner-content {
+            .owl-dots{
                 position: absolute;
-                bottom: auto;
-                left: auto;
-                right: 0;
-                top: 50%;
-                z-index: 3;
+                bottom: 10px;
+                left:0;
+                right:0;
+                z-index: 2;
                 text-align: center;
-                transform: translateY(-50%);
+                button.owl-dot{
+                    outline: none;
+                    width: 10px;
+                    height: 10px;
+                    border-radius: 50%;
+                    margin: 0 5px;
+                    background-color: rgba(255,255,255,0.5);
+                    &.active{
+                        background-color: rgba(255,255,255,1);
 
-                h3 {
-                    text-align: center;
-                    background-color: rgba(255, 255, 255, 0.5);
-                    color: #000;
-                    display: inline-block;
-                    padding: 10px 15px;
-                    text-transform: uppercase;
+                    }
+                }
+            }
+            .owl-item{
+                .banner {
+                    height: auto;
+                    position: relative;
+                    z-index: -1;
+                    padding: 100vh 0 0;
+        
+                    .banner-content {
+                        position: absolute;
+                        bottom: auto;
+                        left: auto;
+                        right: 0;
+                        top: 55%;
+                        z-index: 3;
+                        text-align: center;
+                        transform: translateY(-50%);
+                        opacity: 0;
+                        transition: all 0.4s linear 0.5s;
+                        h3 {
+                            text-align: center;
+                            background-color: rgba(255, 255, 255, 0.5);
+                            color: #000;
+                            display: inline-block;
+                            padding: 10px 15px;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+                &.active{
+                    .banner .banner-content{
+                        top:50%;
+                        opacity: 1;
+                    }
                 }
             }
         }
@@ -291,7 +318,7 @@ body {
     .toursThumb{
         .embed-responsive{
             img{
-                transition: all 0.3s ease;
+                transition: all 0.7s ease;
             }
             .caption{
                 position: absolute;
@@ -305,8 +332,10 @@ body {
                 margin: 0;
                 padding:10px 10px;
                 background: transparent;
-                transform: translateY(-50%) scaleY(0);
-                transition: all 0.3s ease-in-out;
+                // transform: translateY(-50%) scaleY(0);
+                transform: translateY(-50%) ;
+                opacity: 1;
+                transition: all 0.5s ease-in-out;
                 text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
                 &.text-black{color:#000;}
                 h6{
@@ -320,10 +349,12 @@ body {
             }
         }
         &:hover{
-            .caption{ transform: translateY(-50%) scaleY(1); }
+            // .caption{ transform: translateY(-50%) scaleY(1); }
+            .caption{ opacity: 0; }
             img{
-                opacity: 1;
-                filter: grayscale(100%);
+                // filter: grayscale(100%);
+                // opacity: 1;
+                transform: scale(1.2);
             }
         } 
     }
@@ -344,6 +375,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: flex-end;
+    
     @media(max-width:991px){
         justify-content: center;
     }
@@ -509,7 +541,11 @@ body {
     }
 
     .main-footer {
+        background-image: url('../images/footer_banner.jpg');
         background-color: #000;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
         color: #fff;
         padding: 40px 0;
         @media(max-width:991px){
@@ -517,7 +553,7 @@ body {
         }
         .footer_text {
             color: #fff;
-            font-size: 14px;
+            font-size: 13px;
             text-align: right;
             @media(max-width:991px){
                 text-align:center;
@@ -531,6 +567,9 @@ body {
                 @media(max-width:767px){
                     margin: 0;
                     padding:0;
+                }
+                li{
+                    margin-bottom: 12px;
                 }
                 a {
                     font-size: 14px;
@@ -549,10 +588,30 @@ body {
 }
 
 
-
-.instagram-block a { padding: 0; display: inline-block; height: 100%; overflow: hidden; vertical-align: middle; background-color: transparent }
+.instagram-block{
+    position: relative;
+    &:after { display: initial }
+    a { padding: 0; display: inline-block; height: 100%; overflow: hidden; vertical-align: middle; background-color: transparent }
+    .viewInstagram{
+        background: #292929;
+        color:#fff;
+        padding: 5px 0px;
+        position: absolute;
+        height: auto;
+        z-index: 2;
+        width: 200px;
+        margin: auto;
+        left:0;
+        top:0;
+        right:0;
+        bottom:0;
+        height:34px;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+    }
+}
 // .instagram-block a:before { content: ""; display: inline-block; height: 100%; vertical-align: middle }
-.instagram-block:after { display: initial }
 .wrapper #instafeed.owl2row-plugin a { margin: 0 }
 .wrapper #instafeed.owl2row-plugin.owl-carousel .owl-item img { width: 100%; height: auto }
 .carousel-align-arrows div.owl-nav { display: table; position: static }
