@@ -3,27 +3,32 @@ Animation library
 https://github.com/graingert/wow
 https://wowjs.uk/docs.html
 */
+$(window).on('load', function () {
+    setTimeout(function() {
+        $("#loader").fadeOut();
+    }, 1500);
+});
 
 $(function () {
     new WOW().init();
-    //parallax effect for banner
-    (function () {
-        var posY;
-        var image = document.getElementById('parallax');;
-        function paralax() {
-            posY = window.pageYOffset;
-            image.style.top = posY * 0.6 + 'px';
-        }
-        window.addEventListener('scroll', paralax);
-    })();
+   //parallax effect for banner
+    if ($('#parallax').length) {
+        (function () {
+            var posY;
+            var image = document.getElementById('parallax');;
+            function paralax() {
+                posY = window.pageYOffset;
+                image.style.top = posY * 0.6 + 'px';
+            }
+            window.addEventListener('scroll', paralax);
+        })();
+    }
 
     jQuery(document).ready(function ($) {
         $(window).on('load resize scroll', function () {
             var header = $('header.mainHeader nav.navbar');
             var header_Height = header.outerHeight() + 10;
-
             // console.log(header_Height);
-
             if (getScrollTop() > header_Height) {
                 $('body').addClass('headerSticky');
                 $(header).addClass('sticky');
@@ -32,18 +37,17 @@ $(function () {
                 $(header).removeClass('sticky');
             }
         });
-    });
-
-    function getScrollTop() {
-        if (typeof pageYOffset != 'undefined') {
-            return pageYOffset;
-        } else {
-            var B = document.body;
-            var D = document.documentElement;
-            D = (D.clientHeight) ? D : B;
-            return D.scrollTop;
+        function getScrollTop() {
+                if (typeof pageYOffset != 'undefined') {
+                    return pageYOffset;
+                } else {
+                    var B = document.body;
+                    var D = document.documentElement;
+                    D = (D.clientHeight) ? D : B;
+                    return D.scrollTop;
+            }
         }
-    }
+    });
 
     var fixedFooter = '.footer-fixed';
     var content = '.content';
@@ -111,21 +115,21 @@ $(function () {
                     owl2rowContainer: 'owl2row-item',
                     owl2rowDirection: 'utd',
                     autoplay:true,
-                    autoplayTimeout:1000,
+                    autoplayTimeout:2500,
                     autoplayHoverPause:true,
                     responsive: {
                         0: {
-                            items: 1
+                            items: 3
                         },
                         480: {
-                            items: 2
+                            items: 4
                         },
                         768: {
-                            items: 2
+                            items: 4
                         },
                         980: {
 
-                            items: 3
+                            items: 5
 
                         },
                         1200: {
