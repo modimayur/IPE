@@ -157,7 +157,18 @@ $(function () {
         autoplayTimeout:5000,
         autoplayHoverPause: false
     });
-
+    $(".filter-button").click(function () {
+        var value = $(this).attr('data-filter');
+        $(".filter-button").addClass('active');
+        $(this).removeClass('active');
+        if (value == "all") {
+          $('.filter').fadeIn();
+        }
+        else {
+          $(".filter").not('.' + value).fadeOut();
+          $('.filter').filter('.' + value).fadeIn();
+        }
+      });
 
 });
 
