@@ -927,3 +927,93 @@ img.back_arrow {
   height: 22px;
   background-size: auto 14px;
 }
+.content.content-contactus .sectionTitle {
+  font-size: 19px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.content.content-contactus form .form-group .form-control {
+  border-width: 0 0 1px;
+  border-color: #000;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  outline: none;
+  box-shadow: none;
+}
+.content.content-contactus form .btn.btn-dark {
+  border-radius: 7px;
+  background-color: black;
+  border-color: black;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}
+.content.content-contactus .rte a {
+  color: #000;
+}
+.content.content-register {
+  padding-top: 0;
+}
+.content.content-register .bannerWrap {
+  position: relative;
+}
+.content.content-register .bannerWrap h3 {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: normal;
+}
+.content.content-register h6.joinIn {
+  font-size: 18px;
+  text-align: center;
+  font-weight: normal;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.content.content-register form .form-group .form-control {
+  border-width: 0 0 1px;
+  border-color: #000;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+  outline: none;
+  box-shadow: none;
+  color: #020202;
+  font-size: 14px;
+  font-weight: normal;
+}
+.content.content-register form .form-group input::-webkit-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+}
+.content.content-register form .form-group input:-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+}
+.content.content-register form .form-group input::-moz-placeholder {
+  color: currentColor;
+  opacity: 1;
+}
+.content.content-register form .form-group input:-ms-input-placeholder {
+  color: currentColor;
+  opacity: 1;
+}
+.content.content-register form .btn.btn-dark {
+  border-radius: 7px;
+  background-color: black;
+  border-color: black;
+  color: #fff;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 20px;
+}

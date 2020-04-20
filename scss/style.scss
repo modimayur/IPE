@@ -34,6 +34,24 @@
     font-style: normal;
 }
 
+@mixin placeholder() {
+    input::-webkit-input-placeholder {
+        @content
+    }
+
+    input:-moz-placeholder {
+        @content
+    }
+
+    input::-moz-placeholder {
+        @content
+    }
+
+    input:-ms-input-placeholder {
+        @content
+    }
+}
+
 html {
     margin: 0;
     padding: 0;
@@ -1136,6 +1154,110 @@ img.back_arrow {
                 width: 22px;
                 height: 22px;
                 background-size: auto 14px;
+            }
+        }
+    }
+
+    &.content-contactus {
+        .sectionTitle {
+            font-size: 19px;
+            color: rgb(0, 0, 0);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        form {
+            .form-group {
+                .form-control {
+                    border-width: 0 0 1px;
+                    border-color: #000;
+                    border-radius: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                    outline: none;
+                    box-shadow: none;
+                   
+                }
+            }
+
+            .btn.btn-dark {
+                border-radius: 7px;
+                background-color: rgb(0, 0, 0);
+                border-color: rgb(0, 0, 0);
+                color: #fff;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-top: 20px;
+            }
+        }
+
+        .rte {
+            a {
+                color: #000;
+            }
+        }
+    }
+
+    &.content-register {
+        padding-top: 0;
+
+        .bannerWrap {
+            position: relative;
+
+            h3 {
+                position: absolute;
+                z-index: 3;
+                left: 0;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+                padding: 0 10px;
+                color: #fff;
+                font-size: 40px;
+                font-weight: normal;
+            }
+        }
+
+        h6.joinIn {
+            font-size: 18px;
+            text-align: center;
+            font-weight: normal;
+            margin-top: 30px;
+            margin-bottom: 60px;
+        }
+
+        form {
+            .form-group {
+                .form-control {
+                    border-width: 0 0 1px;
+                    border-color: #000;
+                    border-radius: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                    outline: none;
+                    box-shadow: none;
+                    color:#020202;
+                    font-size: 14px;
+                    font-weight: normal;
+                }
+
+                @include placeholder {
+                    color:currentColor;
+                    opacity: 1;
+                }
+                
+
+            }
+
+            .btn.btn-dark {
+                border-radius: 7px;
+                background-color: rgb(0, 0, 0);
+                border-color: rgb(0, 0, 0);
+                color: #fff;
+                padding-left: 20px;
+                padding-right: 20px;
+                margin-top: 20px;
             }
         }
     }
