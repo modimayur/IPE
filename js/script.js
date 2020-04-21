@@ -153,5 +153,20 @@ $(function () {
             $('.filter').filter('.' + value).fadeIn();
         }
     });
+
+    if ($('.profileImgSlider').length) {
+        var owl = $('.profileImgSlider');
+        owl.owlCarousel({
+            items: 1,
+            loop: true,
+            margin: 1,
+            navText: ['', ''],
+            nav: false,
+            dots: false,
+            autoplay: true,
+            autoplayTimeout: 2500,
+            autoplayHoverPause: true
+        });
+    }
 });
 

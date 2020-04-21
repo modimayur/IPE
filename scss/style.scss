@@ -34,6 +34,36 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Beyond The Mountains';
+    src: url('../fonts/Beyond The Mountains.eot');
+    src: url('../fonts/Beyond The Mountains.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Beyond The Mountains.woff2') format('woff2'),
+        url('../fonts/Beyond The Mountains.woff') format('woff'),
+        url('../fonts/Beyond The Mountains.ttf') format('truetype'),
+        url('../fonts/Beyond The Mountains.otf') format('opentype'),
+        url('../fonts/Beyond The Mountains.svg#Beyond The Mountains') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-02DC;
+}
+
+@font-face {
+    font-family: 'Beyond The Mountains';
+    src: url('BeyondTheMountains.eot');
+    src: url('BeyondTheMountains.eot?#iefix') format('embedded-opentype'),
+        url('BeyondTheMountains.woff2') format('woff2'),
+        url('BeyondTheMountains.woff') format('woff'),
+        url('BeyondTheMountains.ttf') format('truetype'),
+        url('BeyondTheMountains.otf') format('opentype'),
+        url('BeyondTheMountains.svg#BeyondTheMountains') format('svg');
+    font-weight: 400;
+    font-style: normal;
+    font-stretch: normal;
+    unicode-range: U+0020-00FD;
+}
+
 @mixin placeholder() {
     input::-webkit-input-placeholder {
         @content
@@ -1176,7 +1206,7 @@ img.back_arrow {
                     padding-right: 0;
                     outline: none;
                     box-shadow: none;
-                   
+
                 }
             }
 
@@ -1237,16 +1267,16 @@ img.back_arrow {
                     padding-right: 0;
                     outline: none;
                     box-shadow: none;
-                    color:#020202;
+                    color: #020202;
                     font-size: 14px;
                     font-weight: normal;
                 }
 
                 @include placeholder {
-                    color:currentColor;
+                    color: currentColor;
                     opacity: 1;
                 }
-                
+
 
             }
 
@@ -1259,6 +1289,88 @@ img.back_arrow {
                 padding-right: 20px;
                 margin-top: 20px;
             }
+        }
+    }
+
+    &.suritDutta {
+        background-image: url('../images/suritDutta_bg.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: top left;
+        padding-bottom: 0;
+        .profileImgWrap {
+            position: relative;
+
+            .profileImgSlider {
+                max-width: 270px;
+                margin-left: auto;
+                margin-right: auto;
+                @media(max-width:767px){
+                    max-width: 180px;
+                }
+                .sliderIteam {
+                    border-radius: 50%;
+                    border: 4px solid rgb(117, 106, 238);
+                    width: 100%;
+                    padding-top: 100%;
+                    position: relative;
+                    overflow: hidden;
+
+                    img.pravatar {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+
+        .profileSocialLink {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            list-style: none;
+            margin: 15px 0 20px;
+            padding: 0;
+
+            li {
+                margin: 0 25px;
+                padding: 0;
+
+                &:first-of-type {
+                    transform: translateY(-30px);
+                }
+
+                &:last-of-type {
+                    transform: translateY(-30px);
+                }
+
+                a {
+                    background-color: #2e3192;
+                    width: 35px;
+                    height: 35px;
+                    display: block;
+                    border-radius: 50%;
+                    color: #fff;
+                    text-align: center;
+                    line-height: 35px;
+                    transition: all 0.3s linear;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+
+        h3.pageHead {
+            font-family: 'Beyond The Mountains';
+            font-weight: 400;
+            font-style: normal;
+            font-stretch: normal;
+            font-size: 40px;;
         }
     }
 }
