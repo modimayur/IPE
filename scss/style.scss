@@ -1305,7 +1305,10 @@ img.back_arrow {
 
         .profileImgWrap {
             position: relative;
-
+            margin-top: -50%;
+            @media(max-width:767px) {
+                margin-top: -100px;
+            }
             .profileImgSlider {
                 max-width: 270px;
                 margin-left: auto;

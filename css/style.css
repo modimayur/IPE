@@ -1051,6 +1051,12 @@ img.back_arrow {
 }
 .content.suritDutta .profileImgWrap {
   position: relative;
+  margin-top: -50%;
+}
+@media (max-width: 767px) {
+  .content.suritDutta .profileImgWrap {
+    margin-top: -100px;
+  }
 }
 .content.suritDutta .profileImgWrap .profileImgSlider {
   max-width: 270px;
