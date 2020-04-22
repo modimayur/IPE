@@ -30,8 +30,8 @@
 }
 @font-face {
   font-family: "Beyond The Mountains";
-  src: url("BeyondTheMountains.eot");
-  src: url("BeyondTheMountains.eot?#iefix") format("embedded-opentype"), url("BeyondTheMountains.woff2") format("woff2"), url("BeyondTheMountains.woff") format("woff"), url("BeyondTheMountains.ttf") format("truetype"), url("BeyondTheMountains.otf") format("opentype"), url("BeyondTheMountains.svg#BeyondTheMountains") format("svg");
+  src: url("../fonts/BeyondTheMountains.eot");
+  src: url("../fonts/BeyondTheMountains.eot?#iefix") format("embedded-opentype"), url("../fonts/BeyondTheMountains.woff2") format("woff2"), url("../fonts/BeyondTheMountains.woff") format("woff"), url("../fonts/BeyondTheMountains.ttf") format("truetype"), url("../fonts/BeyondTheMountains.otf") format("opentype"), url("../fonts/BeyondTheMountains.svg#BeyondTheMountains") format("svg");
   font-weight: 400;
   font-style: normal;
   font-stretch: normal;
@@ -77,6 +77,19 @@ body .btn.btn-primary {
   background-color: #756aee;
   border-color: #756aee;
   color: #fff;
+}
+body .cursor {
+  margin-left: 5px;
+  opacity: 1;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 body header.mainHeader nav.navbar {
   transition: all 0.5s linear;
@@ -973,30 +986,24 @@ img.back_arrow {
   color: #000;
 }
 .content.content-register {
-  padding-top: 0;
+  padding-top: 50px;
 }
-.content.content-register .bannerWrap {
-  position: relative;
-}
-.content.content-register .bannerWrap h3 {
-  position: absolute;
-  z-index: 3;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  text-align: center;
-  padding: 0 10px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: normal;
+@media (max-width: 767px) {
+  .content.content-register {
+    padding-top: 30px;
+  }
 }
 .content.content-register h6.joinIn {
   font-size: 18px;
   text-align: center;
   font-weight: normal;
-  margin-top: 30px;
+  margin-top: 0px;
   margin-bottom: 60px;
+}
+@media (max-width: 767px) {
+  .content.content-register h6.joinIn {
+    margin-bottom: 20px;
+  }
 }
 .content.content-register form .form-group .form-control {
   border-width: 0 0 1px;
@@ -1108,4 +1115,21 @@ img.back_arrow {
   font-style: normal;
   font-stretch: normal;
   font-size: 40px;
+}
+
+.register-page .bannerWrap {
+  position: relative;
+}
+.register-page .bannerWrap h3 {
+  position: absolute;
+  z-index: 3;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 0 10px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: normal;
 }

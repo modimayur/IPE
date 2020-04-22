@@ -6,6 +6,7 @@ https://wowjs.uk/docs.html
 $(function () {
     new WOW().init();
     $(window).on('load', function () {
+        // $("#loader").hide();
         setTimeout(function () {
             $("#loader").fadeOut();
         }, 1500);
@@ -168,5 +169,25 @@ $(function () {
             autoplayHoverPause: true
         });
     }
+
+
 });
 
+var main = function () {
+    var typeWriterText = $('.typeWriter .text');
+    function typeWriter(text, n) {
+        if (n < (text.length)) {
+            $(typeWriterText).html(text.substring(0, n + 1));
+            n++;
+            setTimeout(function () {
+                typeWriter(text, n)
+            }, 200);
+        }
+    }
+    var text = $(typeWriterText).data('text');
+    typeWriter(text, 0);
+};
+
+setTimeout(function () {
+    $(document).ready(main);
+}, 3000);
